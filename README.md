@@ -7,10 +7,16 @@
 for 범위
     if 3, 5의 배수
 ```
-3. 수학적 계산
+2. 수학적 계산
 등차수열의 합을 구하는 문제로 3의 배수와 5의 배수를 각각 따로 계산한 뒤, 중복되는 부분을 제거
 ```python
 sum_3의 배수
 + sum_5의 배수
 - sum_3*5의 배수
 ```
+3. 비교
+![Q001](https://github.com/Jujungin/euler_archives/assets/37700849/d63fc1b2-aabf-44b3-b5ce-63e1ac92640a)
+X축: 10, 100, 1000, 10000, 100000, 1000000
+Y축: 시간(초)
+Function 01: O(N)
+Function 02: O(1)
