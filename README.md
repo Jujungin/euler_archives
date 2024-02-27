@@ -67,3 +67,19 @@ Function 01: 구조상 O(N)
 Function 02: 구조상 O(N)
 
 Function 03: 구조상 O(2^N)
+
+---
+
+## 003. Largest Prime Factor
+> Q. The prime factors of 13195 are 5, 7, 13 and 29.
+What is the largest prime factor of the number 600851475143 ?
+
+1. 정리
+
+   Eratosthenes' Sieve
+   가장 작은 소수인 2부터 시작하여 해당 소수의 배수를 모두 제거하고, 남아 있는 가장 작은 수를 새로운 소수로 선택, 해당 소수의 모든 배수를 제거, 이 과정을 반복한다.
+
+2. 시간복잡도
+
+   ![Q003](https://github.com/Jujungin/euler_archives/assets/37700849/fb0ce14d-3ea5-474d-90ad-6e5d82f11c7b)
+
