@@ -83,3 +83,15 @@ What is the largest prime factor of the number 600851475143 ?
 
    ![Q003](https://github.com/Jujungin/euler_archives/assets/37700849/fb0ce14d-3ea5-474d-90ad-6e5d82f11c7b)
 
+---
+
+## 004. Largest Palindrome Product
+> Q. A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 * 99. Find the largest palindrome made from the product of two 3-digit numbers.
+
+1. 정리
+
+   가장 중요한 핵심은 str로 변환후 뒤집었을때 palindrome인지 아닌지 확인하는게 핵심.
+
+   ```python
+   if str(product) == str(product)[::-1]:
+   ```
