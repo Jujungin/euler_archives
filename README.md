@@ -95,3 +95,60 @@ What is the largest prime factor of the number 600851475143 ?
    ```python
    if str(product) == str(product)[::-1]:
    ```
+
+---
+
+## 005. Smallest Multiple
+> Q. 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder. What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+1. 정리
+
+   범위의 모든 수를 소인수분해하여, 각 소수의 최대 지수를 찾고, 최소공배수를 계산하는 방법을 사용.
+
+   ```python
+   20 = 2^2 * 5^1
+   ```
+
+2. sudo
+   ```python
+   1. 소인수분해 함수를 만든다.
+
+        함수 prime_factors(n)을 정의한다.
+        n을 인자로 받는다.
+        factors라는 빈 딕셔너리를 생성한다.
+    
+        while n이 1보다 큰 동안 반복한다:
+            for divisor in range(2, n+1)로 반복한다:
+                count를 0으로 초기화한다.
+                while n이 divisor로 나누어질 때까지 반복한다:
+                    count를 1 증가시킨다.
+                    n을 divisor로 나눈다.
+                if count가 0보다 크면:
+                    factors 딕셔너리에 divisor를 키로 하고 count를 값으로 저장한다.
+    
+        factors를 반환한다.
+
+    2. 가장 작은 양수를 찾는 함수를 만든다.
+    
+        함수 smallest_multiple(n)을 정의한다.
+        n을 인자로 받는다.
+        prime_factors_count라는 빈 딕셔너리를 생성한다.
+    
+        for i in range(2, n+1)로 반복한다:
+            factors를 prime_factors(i)로 설정한다.
+            for factor, count in factors.items()로 반복한다:
+                if factor가 prime_factors_count에 없거나, count가 prime_factors_count[factor]보다 크면:
+                    prime_factors_count[factor]를 count로 업데이트한다.
+    
+        result를 1로 초기화한다.
+        for factor, count in prime_factors_count.items()로 반복한다:
+            result에 factor의 count 제곱을 곱한다.
+    
+        result를 반환한다.
+
+    3. 문제를 해결한다.
+    
+        result를 smallest_multiple(20)으로 설정한다.
+        result를 출력한다.
+
+   ```
