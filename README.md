@@ -256,4 +256,88 @@ What is the largest prime factor of the number 600851475143 ?
 ---
 
 ## Q009. Special Pythagorean Triplet
-### By listing the first six prime numbers: 2, 3, 5, 7, 11 , and 13, we can see that the 6th prime is 13. What is the 10001st prime number?
+###
+
+A Pythagorean triplet is a set of three natural numbers, $`a < b < c`$, for which, $`a^2 + b^2 = c^2`$. 
+For example, $`3^2 + 4^2 = 9 + 16 = 25 = 5^2`$.
+
+There exists exactly one Pythagorean triplet for which $`a + b + c = 1000`$.
+Find the product $`abc`$.
+
+
+1. function 1
+   
+    반복문 2개로 단순 처리
+
+2. function 2
+   
+   $`a^2 +b^2 = c^2 `$
+
+   $`a = m^2 - n^2`$
+
+   $`b = 2mn`$
+
+   $`c = m^2 + n^2`$
+
+   $`m>n `$,  $`m, n `$은 양의 정수,  $`m, n `$은 서로소
+
+   $`a^2 + b^2 = (m^2-n^2)^2 + (2mn)^2 `$
+
+   $`\qquad \quad \, = m^4 - 2m^2 n^2 + n^4 + 4m^2 n^2 `$
+
+   $`\qquad \quad \, = m^4 + 2m^2 n^2 + n^4 `$
+
+   $`\qquad \quad \, = (m^2 + n^2)^2 `$
+
+   $`\qquad \quad \, = c^2 `$
+
+   문제의 조건에서
+   
+   $`a+b+c = 1000 `$
+
+   $`(m^2-n^2) + (2mn) + (m^2 + n^2) = 1000 `$
+
+   $`2m^2 + 2mn = 1000 `$
+
+   $`2m(m+n) = 1000 `$
+
+   $`\therefore m(m+n) = 500 `$
+
+   ```python
+   for n in range(1, int(require//2)):
+        for m in range(n + 1, int(require//2)):
+            if m * (m + n) == int(require//2):
+                print(f"m: {m}, n: {n}, a: {m**2 - n**2}, b: {2 * m * n}, c: {m**2 + n**2}, abc: {(m**2 - n**2)*(2 * m * n)*(m**2 + n**2)}")
+   ```
+   
+3. function 3
+   
+   $`a+b+c = Require(R) `$
+
+   $`a^2 + b^2 = c^2 `$
+
+   $`c = R - a - b `$
+
+   $`a^2 + b^2 = (R-a-b)^2 `$
+
+   $`\qquad \quad \, = R^2 - 2Ra - 2Rb + 2ab + a^2 +b^2 `$
+
+   $`0 = R^2 -2Ra -2Rb + 2ab `$
+
+   $`2Rb-2ab = R^2 -2Ra `$
+
+   $`2b(R-a) = R(R-2a) `$
+
+   $`b = \frac{R(R-2a)}{2(R-a)} `$
+
+   ```python
+   for a in range(1, require//3):
+        b = (require * (require - (2 * a))) / (2 * (require - a))
+        c = require - a - b
+        if b == int(b) and c == int(c):
+            print(f"a: {a}, b: {int(b)}, c: {int(c)}, abc: {int(a * b * c)}")
+   ```
+
+4. 비교
+
+   ![Q009](https://github.com/Jujungin/euler_archives/assets/37700849/56002d0b-81ad-4aed-baa8-f83d9656a62b)
