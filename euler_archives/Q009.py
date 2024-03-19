@@ -24,6 +24,11 @@ def special_pythagorean_triplet_03(require):
             # print(f"a: {a}, b: {int(b)}, c: {int(c)}, abc: {int(a * b * c)}")
             return a * b * c
             
+# require = 1000
+# print(special_pythagorean_triplet_01(require))
+# print(special_pythagorean_triplet_02(require))
+# print(special_pythagorean_triplet_03(require))
+
 
 def measure_time(func, arg):
     start_time = time.time()
@@ -31,6 +36,7 @@ def measure_time(func, arg):
     end_time = time.time()
     set_time = end_time - start_time
     return set_time
+
 
 require_list = [10, 100, 1000]
 time_list_01 = []
